@@ -11,7 +11,9 @@ export default (
 	<Route path="/" component={App}>
 		<IndexRoute component={HomePage} />
 		<Route path="contact" component={Contact} />
-		<Route path="about" component={About}>
+		<Route path="about" component={About} onEnter={() => {
+			console.log("About to enter /about");
+		}}>
 			<Route path=":name" component={Nest} />
 		</Route>
 	</Route>
