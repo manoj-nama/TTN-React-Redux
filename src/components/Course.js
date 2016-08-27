@@ -1,13 +1,24 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux'
 
-class Contact extends Component {
+import CourseList from './course.list.component';
+
+class Course extends Component {
 	render() {
+		const {courses} = this.props;
 		return (
 			<div>
-				This is Contact Component
+				<CourseList courses={courses} />
 			</div>
 		);
 	}
 }
 
-export default Contact;
+const mapStateToProps = (state) => {
+	return {
+		courses: state.course,
+		isFetching: state.api.isFetching
+	}
+}
+
+export default connect(mapStateToProps)(Course);
