@@ -7,8 +7,8 @@ class App extends Component {
 		return (
 			<div>
 				<Link to={'/'}>Home</Link> | 
-				<Link to={'/about'}>About Us</Link> | 
-				<Link to={'/contact'}>Contact US</Link>
+				<Link to={'/about'}>About</Link> | 
+				<Link to={'/course'}>Courses</Link>
 				<div className="children">
 				{
 					this.props.children
